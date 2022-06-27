@@ -5,7 +5,7 @@
    $database = "web2";
 
    $conn = mysqli_connect($server,$username,$password,$database);
-   if( isset($_POST['submitButton']) )
+   if( isset($_POST['SubmitButton']) )
    {
     // 1.Fetch Form Data
          $firstname = $_POST ['firstname'];
@@ -14,7 +14,7 @@
          $phone   = $_POST ['phonenumber'];
          $message   = $_POST ['message'];
     // 2.Submit Form Data
-         $insertData = mysqli_query ($conn,"INSERT INTO contactus(firstname,lastname,email,phonenumber,message)
+         $insertData = mysqli_query ($connect,"INSERT INTO contactus(firstname,lastname,email,phonenumber,message)
          VALUES('$firstname','$lastname','$email','$phone','$message')");
          if($insertData)
          {
@@ -46,7 +46,7 @@
             <div class="navbar-nav">
                 <a href="index.html" class="nav-link active">Home</a>
                 <a href="#" class="nav-link">About Us</a>
-                <a href="#" class="nav-link">Contact Us</a>
+                <a href="#" class="nav-link">Register Now</a>
             </div>
         </div>
         </div>
@@ -123,7 +123,7 @@
                         <textarea  cols="30" rows="5" class="form-control" name="message" ></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Send a Message</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
         <!-- Contact Us ends here -->

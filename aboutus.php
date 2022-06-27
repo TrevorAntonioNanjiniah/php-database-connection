@@ -1,41 +1,39 @@
-  <?php
-  $server = "localhost"
-  $username = "root"
-  $password = ""
-  $database = "web2"
+   <?php
+   // Database Connection
+   $server = "localhost";
+   $username = "root";
+   $password = "";
+   $database = "web2";
 
-  $conn  = mysqli_connect($server,$username,$password,$database);
-  if( isset($_POST['submitButton']) )
-  {
-    $eamil
-  }
-<!DOCTYPE html>
-<html lang="en">
-<head>
+   $connect = mysqli_connect($server,$username,$password,$database);
+   if( isset($_POST['SubscribeButton']) )
+    {
+      $email =$_POST['email'];
+
+      // submit data
+      $insertdata =mysqli_query($connect, "INSERT INTO subscribers(email)VALUES('$email')");
+      if($insertdata)
+      {
+          echo 'Success';
+      }
+      else
+      {
+          echo 'Error';
+      }
+    }
+   ?>
+   <!DOCTYPE html>
+   <html lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <title>Document</title>
-</head>
-<body>
+    </head>
+     <body>
      <!-- navbar starts here -->
-     <nav class="navbar navbar-expand-lg bg-light fixed-top shadow ">
-       <div class="container-fluid">
-        <a href="#" class="navbar-brand">Zalego Academy</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#menus">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menus">
-            <div class="navbar-nav">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">About Us</a>
-                <a href="#" class="nav-link">Contact Us</a>
-            </div>
-        </div>
-        </div>
-    
-     </nav>
+
      <!-- navbar ends here -->
     <main class="bg-light p-5 mb-4 rounded-3 ">
         <h1 style="padding: 20px;">About Us</h1>
@@ -95,15 +93,15 @@
         <p style="font-size:40px; padding-left: 50px; font-weight: 50; align-content:center;">
             Subscribe to get information, latest news about Zalego Academy
         </p>
-        <form>
+        <form action="aboutus.php" method="POST">
             <div class="row">
                 <div class="mb-3 col-lg-6">
-                    <input type="email" class="form-control" placeholder="Your Email Address" style="padding-left:150px;">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email Address" style="padding-left:150px;">
                 </div>
                 <br>
                 <br>
                 <div class="mb-3 col-lg-6">
-                    <button class="btn btn-primary" style="width: 150px; padding-left: 50px;" type="submit">Subscribe</button>
+                    <button class="btn btn-primary" name="SubscribeButton" style="width: 150px; padding-left: 50px;" type="submit">Subscribe</button>
                 </div>
             </div>
         </form>
@@ -118,5 +116,5 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </body>
+    </html>
