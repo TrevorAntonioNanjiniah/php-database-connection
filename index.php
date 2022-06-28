@@ -4,7 +4,7 @@
    $password = "";
    $database = "web2";
 
-   $conn = mysqli_connect($server,$username,$password,$database);
+   $connect = mysqli_connect($server,$username,$password,$database);
    if( isset($_POST['SubmitButton']) )
    {
     // 1.Fetch Form Data
@@ -35,7 +35,7 @@
     <title>Document</title>
 </head>
 <body>
-   <!-- navbar starts here -->
+   <-- navbar starts here -->
    <nav class="navbar navbar-expand-lg bg-light fixed-top shadow ">
        <div class="container-fluid">
         <a href="#" class="navbar-brand">Zalego Academy</a>
@@ -45,16 +45,16 @@
         <div class="collapse navbar-collapse" id="menus">
             <div class="navbar-nav">
                 <a href="index.html" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">About Us</a>
-                <a href="#" class="nav-link">Register Now</a>
+                <a href="aboutus.php" class="nav-link">About Us</a>
+                <a href="enroll.php" class="nav-link ">Enroll Now</a>
             </div>
         </div>
         </div>
     
-     </nav>
-     <!-- navbar ends here -->
+     </nav> -->
+   
     <main class="p-5 bg-light mb-4 rounded-3">
-        <h1 style="padding: 20px;">Welcome, Nanjiniah Trevor</h1>
+        <h1 style="padding: 20px;">Welcome,Sir Nanjiniah Trevor</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae est eius incidunt recusandae? Quo vel, eveniet eos nulla quibusdam officiis nemo dolorum cum. Porro, quae.
         </p>
@@ -70,7 +70,7 @@
                 </p>
                 <button class="btn btn-primary">View Details</button>
             </div>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6"> 
                 <h1>Header 2</h1>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugit aperiam, dicta nemo deserunt distinctio iure culpa voluptatum harum maxime neque vero aliquam. Magni sapiente omnis fuga enim! Accusamus, molestias?
@@ -86,14 +86,14 @@
             </div>
         </div>
 
-        <!-- Contact Us starts here -->
+       
         <div class="row pt-5">
             <h1>Contact Us</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, quae magnam officia voluptatum cumque consequuntur molestias quibusdam in eum. Minima accusamus aperiam animi laudantium repudiandae nobis dignissimos architecto nesciunt aut.
             </p>
 
-            <form action="aboutus.php" method="POST">
+            <form action="index.php" method="POST">
                 <div class="row">
                     <div class="mb-3 col-lg-6 col-md-6">
                         <label for="firstname" class="form-label">First Name</label>
@@ -104,7 +104,7 @@
                         <label for="lastname" class="form-label">Last Name</label>
                         <input type="text" name="lastname" class="form-control" placeholder="Enter Your Last Name">
                     </div>
-                </div>
+                </div> 
 
                 <div class="row">
                     <div class="mb-3 col-lg-6">
@@ -112,10 +112,10 @@
                         <input type="tel" name="phonenumber" class="form-control" placeholder="Enter Your Phone Number">
     
                     </div>
-                    <div class="mb-3 col-lg-6">
+                     <div class="mb-3 col-lg-6">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
-                    </div>
+                    </div> 
                 </div>
                 <div class="row">
                     <div class="mb-3 col-lg-12">
@@ -123,10 +123,9 @@
                         <textarea  cols="30" rows="5" class="form-control" name="message" ></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="SubmitButton">Submit</button>
             </form>
         </div>
-        <!-- Contact Us ends here -->
 
         <hr>
         <footer>
